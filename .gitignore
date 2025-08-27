@@ -182,3 +182,7 @@ cython_debug/
 
 # Results
 *results/
+
+# Config
+.vscode/
+.github/
