@@ -11,13 +11,21 @@ Set And Open Browser
 
     [Arguments]    ${default_browser}=${BROWSER}
 
-    ${driverpath}    Evaluate    webdriver_manager.chrome.ChromeDriverManager().install()    modules=webdriver_manager.chrome
-    ${browser_options}    Set Variable    add_argument("--incognito");add_argument("--start-maximized");add_argument("--disable-search-engine-choice-screen");add_argument("--ignore-certificate-errors");add_argument("--headless")
+    ${options}=    Evaluate    sys.modules['selenium.webdriver'].ChromeOptions()    sys, selenium.webdriver
+    Call Method    ${options}    add_argument    --headless
+    Call Method    ${options}    add_argument    --no-sandbox
+    Call Method    ${options}    add_argument    --disable-dev-shm-usage
+    Call Method    ${options}    add_argument    --disable-gpu
+    Call Method    ${options}    add_argument    --start-maximized
+    Call Method    ${options}    add_argument    --incognito
+    Call Method    ${options}    add_argument    --disable-search-engine-choice-screen
+    Call Method    ${options}    add_argument    --ignore-certificate-errors
+    Create WebDriver    Chrome    options=${options}
+    # timeouts úteis
+    Set Selenium Timeout          20 s
+    Set Selenium Implicit Wait    2 s
 
-    Open Browser    ${DEFAULT_URL}
-    ...    ${default_browser}
-    ...    options=${browser_options}
-    ...    executable_path=${driverpath}
+    Go To    ${DEFAULT_URL}
 
 Close Environment
     [Documentation]    This keyword closes the environment
