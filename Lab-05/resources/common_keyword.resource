@@ -12,7 +12,7 @@ Set And Open Browser
     [Arguments]    ${default_browser}=${BROWSER}
 
     ${driverpath}    Evaluate    webdriver_manager.chrome.ChromeDriverManager().install()    modules=webdriver_manager.chrome
-        ${browser_options}    Set Variable    add_argument("--incognito");add_argument("--start-maximized");add_argument("--disable-search-engine-choice-screen");add_argument("--ignore-certificate-errors")
+    ${browser_options}    Set Variable    add_argument("--incognito");add_argument("--start-maximized");add_argument("--disable-search-engine-choice-screen");add_argument("--ignore-certificate-errors");add_argument("--headless")
 
     Open Browser    ${DEFAULT_URL}
     ...    ${default_browser}
