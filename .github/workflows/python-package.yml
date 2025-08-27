@@ -31,9 +31,10 @@ jobs:
           # Install Robot Framework and the libraries you use:
           pip install robotframework
           # If you use Selenium:
-          # pip install robotframework-seleniumlibrary
-          # If you use Browser/Playwright:
-          # pip install robotframework-browser && rfbrowser init
+          pip install robotframework-seleniumlibrary
+          pip install webdrivermanager
+          pip install rpaframework
+          pip install python-dotenv
           # Project-specific dependencies:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
 
