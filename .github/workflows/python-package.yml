@@ -49,7 +49,7 @@ jobs:
           LOGIN_USERNAME: ${{ secrets.LOGIN_USERNAME }}
           LOGIN_PASSWORD: ${{ secrets.LOGIN_PASSWORD }}
         run: |
-          robot ./Lab-05/tests/lab5_test.robot
+          python -m robot ./Lab-05/tests/lab5_test.robot
 
           # Or run the whole test folder:
           # robot -d results ./Lab-05/tests
