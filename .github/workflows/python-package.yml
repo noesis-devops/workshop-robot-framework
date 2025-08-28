@@ -19,11 +19,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: ${{ matrix.python-version }}
-          cache: 'pip'
+      - name: Python version
+        run: |
+          python --version
+
+      #- name: Set up Python
+      #  uses: actions/setup-python@v5
+      #  with:
+      #    python-version: ${{ matrix.python-version }}
+      #    cache: 'pip'
 
       - name: Install Robot Framework dependencies
         run: |
