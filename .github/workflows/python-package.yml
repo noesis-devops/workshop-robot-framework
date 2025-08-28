@@ -40,7 +40,7 @@ jobs:
           pip install rpaframework
           pip install python-dotenv
           # Project-specific dependencies:
-          if ( -f requirements.txt ); then pip install -r requirements.txt; fi
+          #if (Test-Path requirements.txt) { pip install -r requirements.txt }
 
       - name: Run Robot Framework tests
         env:
