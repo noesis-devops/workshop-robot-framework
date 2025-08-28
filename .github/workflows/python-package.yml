@@ -49,24 +49,7 @@ jobs:
           LOGIN_USERNAME: ${{ secrets.LOGIN_USERNAME }}
           LOGIN_PASSWORD: ${{ secrets.LOGIN_PASSWORD }}
         run: |
-          mkdir -p results
-          robot \
-            --output results/output.xml \
-            --report results/report.html \
-            --log results/log.html \
-            -d results \
-            ./Lab-05/tests/lab5_test.robot
+          robot ./Lab-05/tests/lab5_test.robot
 
           # Or run the whole test folder:
           # robot -d results ./Lab-05/tests
-
-      - name: Convert Robot output to JUnit (optional but useful)
-        run: |
-          pip install robotframework-rebot
-          rebot --xunit results/junit.xml results/output.xml
-
-      - name: Upload Robot reports as artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: robot-reports
-          path: results/
