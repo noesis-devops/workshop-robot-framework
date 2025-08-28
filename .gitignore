@@ -185,3 +185,7 @@ cython_debug/
 
 # Config
 .vscode/
+.pabotsuitenames
+log.html
+output.xml
+report.html

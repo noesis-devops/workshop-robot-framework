@@ -1,0 +1,8 @@
+robotframework==7.0.1
+robotframework-seleniumlibrary==6.7.1
+rpaframework==31.0.0
+selenium==4.15.2
+webdrivermanager==0.10.0
+robotframework-pabot==5.0.0
+robotframework-jsonlibrary==0.5
+robotframework-requests==0.9.7

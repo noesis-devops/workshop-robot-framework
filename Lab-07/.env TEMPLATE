@@ -1,0 +1,4 @@
+
+# Login credentials for the application
+LOGIN_USERNAME=USERNAME
+LOGIN_PASSWORD=PASSWORD
